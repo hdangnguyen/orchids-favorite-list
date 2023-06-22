@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     width: '100%',
     top: '25%',
     left: 20,
-    gap: 8,
+    gap: 3,
   },
   headingButton: {
     backgroundColor: '#4E9168',
@@ -65,5 +65,6 @@ const styles = StyleSheet.create({
     padding: 6,
     paddingHorizontal: 10,
     borderRadius: 10,
+    marginTop: 10,
   },
 });
