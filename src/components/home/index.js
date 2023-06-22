@@ -1,23 +1,25 @@
-import { Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Home() {
+  const navigation = useNavigation();
+
+  const handleNavigateToFavorite = () => {
+    navigation.navigate('Favorites'); // Navigates to the 'Favorites' screen
+  };
   return (
     <ScrollView style={styles.container}>
       <View style={styles.backgroundImg}>
         <Image source={require('../../../assets/images/orchids_img.png')} style={styles.img} />
-        <ImageBackground
-          source={require('../../../assets/images/orchids_background_img.jpeg')}
-          resizeMode="cover"
-        ></ImageBackground>
-        <Text style={styles.heading}>Welcome to </Text>
-        <Text
-          style={[
-            styles.heading,
-            { top: '40%', fontSize: 24, fontWeight: '600', color: '#4E9168' },
-          ]}
-        >
-          Orchids Shop
-        </Text>
+        <View style={styles.headingContent}>
+          <Text style={styles.heading}>Welcome to </Text>
+          <Text style={[styles.heading, { fontSize: 26, fontWeight: '600', color: '#4E9168' }]}>
+            Orchids Shop
+          </Text>
+          <TouchableOpacity onPress={handleNavigateToFavorite} style={styles.headingButton}>
+            <Text style={{ fontSize: 12, color: '#F5EFCF' }}>Go to Favorite</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </ScrollView>
   );
@@ -30,25 +32,38 @@ const styles = StyleSheet.create({
   },
   backgroundImg: {
     margin: 20,
-    height: 160,
+    height: 180,
     borderRadius: 20,
-    backgroundColor: '#F5EFCF',
+    backgroundColor: '#E8F1EC',
     position: 'relative',
   },
   img: {
     height: '80%',
     width: '20%',
     position: 'absolute',
-    right: 50,
+    right: 40,
     bottom: 20,
   },
   heading: {
-    fontSize: 16,
-    width: '50%',
-    position: 'absolute',
-    left: 20,
-    top: '25%',
+    fontSize: 14,
+    width: '60%',
     color: '#4E4E4E',
     fontWeight: 500,
+  },
+  headingContent: {
+    position: 'absolute',
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    top: '25%',
+    left: 20,
+    gap: 8,
+  },
+  headingButton: {
+    backgroundColor: '#4E9168',
+    alignSelf: 'flex-start',
+    padding: 6,
+    paddingHorizontal: 10,
+    borderRadius: 10,
   },
 });
