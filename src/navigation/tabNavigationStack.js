@@ -28,6 +28,7 @@ const NavigationBottom = () => {
           shadowOpacity: 0,
           shadowRadius: 0,
         },
+        headerShown: false,
       }}
     >
       <Tab.Screen
@@ -35,7 +36,6 @@ const NavigationBottom = () => {
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => <Icon name="home-outline" color={color} size={size} />,
-          headerShown: false,
         }}
         component={HomeStack}
       />

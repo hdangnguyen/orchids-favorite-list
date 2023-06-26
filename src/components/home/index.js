@@ -5,7 +5,7 @@ import { ProductCard } from '../product-card';
 
 export default function Home({ navigation }) {
   const handleNavigateToFavorite = () => {
-    navigation.navigate('Favorites'); // Navigates to the 'Favorites' screen
+    alert('Welcome to App :v');
   };
   return (
     <FlatList
@@ -20,7 +20,7 @@ export default function Home({ navigation }) {
                 Orchids Shop
               </Text>
               <TouchableOpacity onPress={handleNavigateToFavorite} style={styles.headingButton}>
-                <Text style={{ fontSize: 12, color: '#F5EFCF' }}>Go to Favorite</Text>
+                <Text style={{ fontSize: 12, color: '#F5EFCF' }}>Welcome</Text>
               </TouchableOpacity>
             </View>
           </View>
