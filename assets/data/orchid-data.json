@@ -1,27 +1,98 @@
 [
-    {
-        "id": 1,
-        "name": "Phalaenopsis",
-        "image": "https://images.unsplash.com/photo-1573816725531-0dadf0fd0c31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8UGhhbGFlbm9wc2lzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
-    },
-    {
-        "id": 2,
-        "name": "Amaryllidaceae",
-        "image": "https://images.unsplash.com/photo-1614618659042-f44980e9136c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1065&q=80"
-    },
-    {
-        "id": 3,
-        "name": "Dendrobium",
-        "image": "https://images.unsplash.com/photo-1591917979353-9547a7bac689?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2062&q=80"
-    },
-    {
-        "id": 4,
-        "name": "Vanda",
-        "image": "https://images.unsplash.com/photo-1679966520059-9cda476624cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-    },
-    {
-        "id": 5,
-        "name": "Oncidium",
-        "image": "https://images.unsplash.com/photo-1510020278092-00b7460e9317?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2038&q=80"
-    }
+  {
+    "id": 1,
+    "name": "Phalaenopsis",
+    "image": "https://images.unsplash.com/photo-1573816725531-0dadf0fd0c31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8UGhhbGFlbm9wc2lzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    "price": "$20",
+    "description": "Phalaenopsis is a beautiful orchid known for its vibrant colors and long-lasting blooms. It requires moderate care and is a popular choice among orchid enthusiasts.",
+    "category": "Common Orchid"
+  },
+  {
+    "id": 2,
+    "name": "Amaryllidaceae",
+    "image": "https://images.unsplash.com/photo-1614618659042-f44980e9136c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1065&q=80",
+    "price": "$25",
+    "description": "Amaryllidaceae orchids are known for their large and showy flowers. They come in various colors and make a stunning addition to any orchid collection.",
+    "category": "Common Orchid"
+  },
+  {
+    "id": 3,
+    "name": "Dendrobium",
+    "image": "https://images.unsplash.com/photo-1591917979353-9547a7bac689?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2062&q=80",
+    "price": "$18",
+    "description": "Dendrobium orchids are known for their delicate and colorful blooms. They are relatively easy to care for and make a lovely addition to any orchid collection.",
+    "category": "Common Orchid"
+  },
+  {
+    "id": 4,
+    "name": "Vanda",
+    "image": "https://www.allaboutgardening.com/wp-content/uploads/2023/01/orange-vanda-orchid-blossoms.jpeg",
+    "price": "$30",
+    "description": "Vanda orchids are known for their vibrant colors and large, flat flowers. They require bright light and high humidity to thrive.",
+    "category": "Common Orchid"
+  },
+  {
+    "id": 5,
+    "name": "Oncidium",
+    "image": "https://images.unsplash.com/photo-1510020278092-00b7460e9317?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2038&q=80",
+    "price": "$22",
+    "description": "Oncidium orchids, also known as dancing lady orchids, are admired for their beautiful and intricate flowers. They are relatively easy to grow and bloom profusely.",
+    "category": "Fragrant Orchid"
+  },
+  {
+    "id": 6,
+    "name": "Cattleya",
+    "image": "https://images.unsplash.com/photo-1634579788379-169607185504?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+    "price": "$28",
+    "description": "Cattleya orchids are known for their stunning and fragrant blooms. They come in various colors and are popular for their vibrant and long-lasting flowers.",
+    "category": "Fragrant Orchid"
+  },
+  {
+    "id": 7,
+    "name": "Cymbidium",
+    "image": "https://images.squarespace-cdn.com/content/v1/62c9fbcd178d631e0dcf7b29/1657645408937-IWIWS27N2J8EKWIKM4FK/cymbidium-orchid-flower",
+    "price": "$25",
+    "description": "Cymbidium orchids are known for their large and showy flowers. They come in various colors and make a stunning addition to any orchid collection.",
+    "category": "Common Orchid"
+  },
+  {
+    "id": 8,
+    "name": "Ophrys",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Bee_Orchid_%28Ophrys_apifera%29_%2814374841786%29_-_cropped.jpg",
+    "price": "$25",
+    "description": "Ophrys orchids are known for their large and showy flowers. They come in various colors and make a stunning addition to any orchid collection.",
+    "category": "Common Orchid"
+  },
+  {
+    "id": 9,
+    "name": "Cypripedium",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/52/Klump.ziedas1.jpg",
+    "price": "$25",
+    "description": "Cypripedium orchids are known for their large and showy flowers. They come in various colors and make a stunning addition to any orchid collection.",
+    "category": "Rare Orchid"
+  },
+  {
+    "id": 10,
+    "name": "Paphiopedilum",
+    "image": "https://images.unsplash.com/photo-1650731162438-ebef24a5078c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3276&q=80",
+    "price": "$25",
+    "description": "Paphiopedilum orchids are known for their large and showy flowers. They come in various colors and make a stunning addition to any orchid collection.",
+    "category": "Rare Orchid"
+  },
+  {
+    "id": 11,
+    "name": "Catasetum",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Catasetum-saccatum.jpg",
+    "price": "$25",
+    "description": "Catasetum orchids are known for their large and showy flowers. They come in various colors and make a stunning addition to any orchid collection.",
+    "category": "Mutant Orchid"
+  },
+  {
+    "id": 12,
+    "name": "Zygopetalum",
+    "image": "https://bombotany.com/wp-content/uploads/2021/12/in-spike-orchid-zygopetalum-louisendorf-rhein-moonlight-61af9e0f.jpg",
+    "price": "$25",
+    "description": "Zygopetalum orchids are known for their unique and fragrant flowers. They have a distinct pattern and come in various colors, adding elegance to any orchid collection.",
+    "category": "Fragrant Orchid"
+  }
 ]
