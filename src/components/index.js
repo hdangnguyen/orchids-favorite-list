@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet } from 'react-native';
-import NavigationBottom from './bottom-tabs';
+import NavigationBottom from '../navigation/tabNavigationStack';
 
 const styles = StyleSheet.create({
   container: {

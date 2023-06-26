@@ -3,8 +3,9 @@ import { StyleSheet, Dimensions } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 /* icon */
 import Icon from 'react-native-vector-icons/Ionicons';
-import Home from '../home';
-import Favorite from '../favorite';
+import HomeStack from './homeStack';
+import FavoriteStack from './favoriteStack';
+import { appColors } from '../utils/appColor';
 const NavigationBottom = () => {
   const Tab = createBottomTabNavigator();
 
@@ -12,10 +13,10 @@ const NavigationBottom = () => {
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={{
-        tabBarActiveTintColor: '#4E9168',
-        tabBarInactiveTintColor: '#6B6B6B',
+        tabBarActiveTintColor: appColors.primary,
+        tabBarInactiveTintColor: appColors.inactive,
         tabBarStyle: {
-          backgroundColor: '#fff',
+          backgroundColor: appColors.white,
           borderTopWidth: 1,
           borderTopColor: '#EAEAEA',
           elevation: 0,
@@ -30,20 +31,21 @@ const NavigationBottom = () => {
       }}
     >
       <Tab.Screen
-        name="Home"
+        name="HomeTab"
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => <Icon name="home-outline" color={color} size={size} />,
+          headerShown: false,
         }}
-        component={Home}
+        component={HomeStack}
       />
       <Tab.Screen
-        name="Favorites"
+        name="FavoritesTab"
         options={{
           tabBarLabel: 'Favorites',
           tabBarIcon: ({ color, size }) => <Icon name="heart-outline" color={color} size={size} />,
         }}
-        component={Favorite}
+        component={FavoriteStack}
       />
     </Tab.Navigator>
   );

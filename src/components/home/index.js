@@ -1,12 +1,9 @@
 import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import Category from '../category';
-import ProductGrid from '../product-grid';
 import product from '../../../assets/data/orchid-data.json';
+import { ProductCard } from '../product-card';
 
-export default function Home() {
-  const navigation = useNavigation();
-
+export default function Home({ navigation }) {
   const handleNavigateToFavorite = () => {
     navigation.navigate('Favorites'); // Navigates to the 'Favorites' screen
   };
@@ -30,7 +27,28 @@ export default function Home() {
           <Category data={product} />
         </>
       }
-      ListFooterComponent={<ProductGrid data={product} />}
+      ListFooterComponent={
+        <View
+          style={{
+            marginVertical: 24,
+            marginHorizontal: 20,
+            display: 'flex',
+            gap: 15,
+          }}
+        >
+          <Text style={{ fontSize: 18, fontWeight: 600 }}>All Orchids</Text>
+          <View>
+            <FlatList
+              data={product}
+              keyExtractor={(item) => item.id}
+              numColumns={2}
+              columnWrapperStyle={{ justifyContent: 'space-between', display: 'flex', gap: 10 }}
+              style={{ gap: 10 }}
+              renderItem={({ item }) => <ProductCard item={item} navigation={navigation} />}
+            />
+          </View>
+        </View>
+      }
       style={styles.container}
     ></FlatList>
   );
