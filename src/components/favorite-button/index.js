@@ -13,6 +13,7 @@ const FavoriteCard = ({
   buttonSize = 28,
 }) => {
   const isFavorite = favoriteItems.some((favoriteItem) => favoriteItem.id === item.id); // Check if the item is in the favorite list
+  console.log('favoriteItem', favoriteItems);
   const handleToggleFavorite = () => {
     if (isFavorite) {
       removeFromFavorite(item); // Remove from favorites
