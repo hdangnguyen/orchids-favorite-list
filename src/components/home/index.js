@@ -1,7 +1,8 @@
-import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Category from '../category';
 import product from '../../../assets/data/orchid-data.json';
 import { ProductCard } from '../product-card';
+import { Image } from 'expo-image';
 
 export default function Home({ navigation }) {
   const handleNavigateToFavorite = () => {

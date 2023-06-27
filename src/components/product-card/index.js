@@ -1,12 +1,6 @@
-import {
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
+import FavoriteButton from '../favorite-button';
+import { Image } from 'expo-image';
 
 export const ProductCard = ({ navigation, item }) => {
   const handleNavigateToProductDetail = (product) => {
@@ -20,9 +14,7 @@ export const ProductCard = ({ navigation, item }) => {
         <Text style={styles.productName}>{item.name}</Text>
         <View style={styles.price}>
           <Text style={{ fontSize: 16, color: '#4E9168' }}>{item.price}</Text>
-          <TouchableOpacity>
-            <Icon name="heart-outline" size={20} color="#4E9168" />
-          </TouchableOpacity>
+          <FavoriteButton item={item} buttonSize={20} />
         </View>
       </View>
     </TouchableWithoutFeedback>

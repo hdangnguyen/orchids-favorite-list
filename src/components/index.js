@@ -1,20 +1,18 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { StyleSheet } from 'react-native';
 import NavigationBottom from '../navigation/tabNavigationStack';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import { Provider } from 'react-redux';
+import storePre from '../redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 export default function Index() {
+  const { persistor, store } = storePre;
   return (
-    <NavigationContainer>
-      <NavigationBottom />
-    </NavigationContainer>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <NavigationContainer>
+          <NavigationBottom />
+        </NavigationContainer>
+      </PersistGate>
+    </Provider>
   );
 }

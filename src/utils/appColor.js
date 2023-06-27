@@ -8,6 +8,7 @@ export const appColors = {
   redOrange: '#FF3D00',
   red: '#E80057',
   darkGray: '#4E4E4E',
+  loveColor: '#F1689D',
   lightGray: '#DDDDDD',
   gray: '#BEBEBE',
   lightGreen: 'rgba(0,197,105, 0.2)',

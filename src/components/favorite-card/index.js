@@ -1,18 +1,15 @@
 import React from 'react';
-import {
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
+import { connect } from 'react-redux';
+import { addToFavorite } from '../../redux/action/favoriteAction';
+import FavoriteButton from '../favorite-button';
+import { Image } from 'expo-image';
 
-export default function FavoriteCard({ item, navigation }) {
+const FavoriteCard = ({ item, navigation, addToFavorite }) => {
   const handleNavigateToProductDetail = (product) => {
     navigation.navigate('Details', { product });
   };
+
   return (
     <TouchableWithoutFeedback onPress={() => handleNavigateToProductDetail(item)}>
       <View style={styles.productItem}>
@@ -23,23 +20,25 @@ export default function FavoriteCard({ item, navigation }) {
               <Text style={styles.category}>{item.category}</Text>
               <Text style={styles.name}>{item.name}</Text>
             </View>
-            <TouchableOpacity>
-              <Icon name="heart-outline" size={28} color="#4E9168" />
-            </TouchableOpacity>
+            <FavoriteButton item={item} />
           </View>
           <Text style={styles.price}>{item.price}.00</Text>
         </View>
       </View>
     </TouchableWithoutFeedback>
   );
-}
+};
+
+const mapDispatchToProps = {
+  addToFavorite: addToFavorite, // Map the addToFavorite action to props
+};
 
 const styles = StyleSheet.create({
   productItem: {
     flexDirection: 'row',
     padding: 8,
     marginHorizontal: 15,
-    marginTop: 20,
+    marginTop: 10,
     backgroundColor: '#FFFFFF',
     borderRadius: 10,
     shadowColor: '#AAA9A4',
@@ -85,3 +84,4 @@ const styles = StyleSheet.create({
     color: '#4E9168',
   },
 });
+export default connect(null, mapDispatchToProps)(FavoriteCard);

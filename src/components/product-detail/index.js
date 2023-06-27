@@ -1,6 +1,7 @@
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { appColors } from '../../utils/appColor';
+import FavoriteButton from '../favorite-button';
+import { Image } from 'expo-image';
 
 export const DetailProduct = ({ route }) => {
   const { name, image, price, description, category } = route.params.product;
@@ -30,9 +31,7 @@ export const DetailProduct = ({ route }) => {
             }}
           >
             <Text style={styles.price}>{price}.00</Text>
-            <TouchableOpacity>
-              <Icon name="heart-outline" size={28} color="#4E9168" />
-            </TouchableOpacity>
+            <FavoriteButton item={route.params.product} />
           </View>
           <Text style={styles.productName}>{name}</Text>
         </View>
