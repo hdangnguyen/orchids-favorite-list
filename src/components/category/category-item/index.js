@@ -1,24 +1,15 @@
-import { useState } from 'react';
-import { StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-export default function CategoryItem({ name = 'item' }) {
-  const [isActived, setIsActived] = useState(false);
-
-  const handlePress = () => {
-    setIsActived(!isActived);
-  };
-
-  const containerStyle = isActived ? styles.activeContainer : styles.container;
-  const textStyle = isActived ? styles.activeText : styles.text;
+const CategoryItem = ({ name, currentCategory }) => {
+  const containerStyle = currentCategory === name ? styles.activeContainer : styles.container;
+  const textStyle = currentCategory === name ? styles.activeText : styles.text;
 
   return (
-    <TouchableWithoutFeedback onPress={handlePress}>
-      <View style={containerStyle}>
-        <Text style={textStyle}>{name}</Text>
-      </View>
-    </TouchableWithoutFeedback>
+    <View style={containerStyle}>
+      <Text style={textStyle}>{name}</Text>
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -47,3 +38,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
+
+export default CategoryItem;

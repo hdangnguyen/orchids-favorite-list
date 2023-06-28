@@ -3,11 +3,20 @@ import Category from '../category';
 import product from '../../../assets/data/orchid-data.json';
 import { ProductCard } from '../product-card';
 import { Image } from 'expo-image';
+import { connect } from 'react-redux';
 
-export default function Home({ navigation }) {
+const Home = ({ navigation, categoryItems }) => {
   const handleNavigateToFavorite = () => {
     alert('Welcome to App :v');
   };
+
+  // Filter products based on selected category
+  const filteredProducts = categoryItems
+    ? product.filter((product) =>
+        categoryItems === 'All' ? true : product.category === categoryItems
+      )
+    : product;
+
   return (
     <FlatList
       showsVerticalScrollIndicator={false}
@@ -40,7 +49,7 @@ export default function Home({ navigation }) {
           <Text style={{ fontSize: 18, fontWeight: 600 }}>All Orchids</Text>
           <View>
             <FlatList
-              data={product}
+              data={filteredProducts}
               keyExtractor={(item) => item.id}
               numColumns={2}
               columnWrapperStyle={{ justifyContent: 'space-between', display: 'flex', gap: 10 }}
@@ -53,7 +62,7 @@ export default function Home({ navigation }) {
       style={styles.container}
     ></FlatList>
   );
-}
+};
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
@@ -97,3 +106,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
 });
+
+const mapStateToProps = (state) => ({
+  categoryItems: state.category.selectedCategoryItem, // Access the favorite items from the Redux store
+});
+
+export default connect(mapStateToProps)(Home);

@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   productContent: {
     flex: 1,
     marginLeft: 10,
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
   },
   detailsContainer: {
     flexDirection: 'row',
@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
   },
   detailsText: {
     flex: 1,
+    gap: 3,
   },
   name: {
     fontSize: 18,
@@ -77,7 +78,6 @@ const styles = StyleSheet.create({
   category: {
     fontSize: 14,
     color: '#6A6A6A',
-    marginVertical: 5,
   },
   price: {
     fontSize: 18,
