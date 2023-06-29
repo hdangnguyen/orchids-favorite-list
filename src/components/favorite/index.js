@@ -33,11 +33,21 @@ const Favorite = ({ navigation, favoriteItems, removeAllFavorite }) => {
       {favoriteItems.length !== 0 ? (
         <FlatList
           ListHeaderComponent={
-            <TouchableOpacity onPress={() => showConfirmDialog()} style={{ margin: 20 }}>
-              <Text style={{ fontSize: 18, fontWeight: 600, color: appColors.redOrange }}>
-                <Icon name="trash-outline" size={20} color={appColors.redOrange} /> Remove All
-              </Text>
-            </TouchableOpacity>
+            <View
+              style={{
+                marginTop: 24,
+                marginBottom: 15,
+                marginHorizontal: 20,
+              }}
+            >
+              {favoriteItems.length > 1 && (
+                <TouchableOpacity onPress={() => showConfirmDialog()}>
+                  <Text style={{ fontSize: 18, fontWeight: 600, color: appColors.redOrange }}>
+                    <Icon name="trash-outline" size={20} color={appColors.redOrange} /> Remove All
+                  </Text>
+                </TouchableOpacity>
+              )}
+            </View>
           }
           showsVerticalScrollIndicator={false}
           data={favoriteItems}

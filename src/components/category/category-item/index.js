@@ -1,8 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { connect } from 'react-redux';
 
-const CategoryItem = ({ name, currentCategory }) => {
-  const containerStyle = currentCategory === name ? styles.activeContainer : styles.container;
-  const textStyle = currentCategory === name ? styles.activeText : styles.text;
+const CategoryItem = ({ name, categoryItems }) => {
+  const containerStyle = categoryItems === name ? styles.activeContainer : styles.container;
+  const textStyle = categoryItems === name ? styles.activeText : styles.text;
 
   return (
     <View style={containerStyle}>
@@ -39,4 +40,8 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CategoryItem;
+const mapStateToProps = (state) => ({
+  categoryItems: state.category.selectedCategoryItem, // Access the favorite items from the Redux store
+});
+
+export default connect(mapStateToProps)(CategoryItem);

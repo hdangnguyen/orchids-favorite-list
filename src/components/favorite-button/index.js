@@ -26,7 +26,7 @@ const FavoriteCard = ({
       <Icon
         name={isFavorite ? 'heart' : 'heart-outline'}
         size={buttonSize}
-        color={isFavorite ? appColors.loveColor : appColors.primaryColor}
+        color={isFavorite ? appColors.loveColor : appColors.primary}
       />
     </TouchableOpacity>
   );

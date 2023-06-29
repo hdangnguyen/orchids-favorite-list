@@ -1,13 +1,13 @@
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import CategoryItem from './category-item';
 import { connect } from 'react-redux';
-import { selectCategoryItem } from '../../redux/action/categoryAction';
+import { selectedCategoryItem } from '../../redux/action/categoryAction';
 
-const Category = ({ categoryItems, selectCategoryItem }) => {
+const Category = ({ categoryItems, selectedCategoryItem }) => {
   const categoryNames = ['All', 'Fragrant Orchid', 'Common Orchid', 'Rare Orchid', 'Mutant Orchid'];
 
   const handleSelectItem = (item) => {
-    selectCategoryItem(item);
+    selectedCategoryItem(item);
   };
 
   return (
@@ -22,7 +22,7 @@ const Category = ({ categoryItems, selectCategoryItem }) => {
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         {categoryNames.map((item, index) => (
           <Pressable key={index} onPress={() => handleSelectItem(item)}>
-            <CategoryItem name={item} currentCategory={categoryItems} />
+            <CategoryItem name={item} />
           </Pressable>
         ))}
       </ScrollView>
@@ -35,7 +35,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  selectCategoryItem,
+  selectedCategoryItem,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category);

@@ -22,7 +22,7 @@ export const ProductCard = ({ navigation, item }) => {
 };
 const styles = StyleSheet.create({
   productItem: {
-    flex: 1,
+    width: '50%',
     padding: 8,
     backgroundColor: '#FFFFFF',
     borderRadius: 10,

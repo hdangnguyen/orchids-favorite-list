@@ -52,7 +52,11 @@ const Home = ({ navigation, categoryItems }) => {
               data={filteredProducts}
               keyExtractor={(item) => item.id}
               numColumns={2}
-              columnWrapperStyle={{ justifyContent: 'space-between', display: 'flex', gap: 10 }}
+              columnWrapperStyle={{
+                justifyContent: 'space-between',
+                display: 'flex',
+                gap: 10,
+              }}
               style={{ gap: 10 }}
               renderItem={({ item }) => <ProductCard item={item} navigation={navigation} />}
             />
